@@ -1,0 +1,13 @@
+node_modules/
+dist/
+target/
+*.class
+*.jar
+*.log
+.idea/
+*.iml
+.superpowers/
+__pycache__/
+*.pyc
+saved_models/
+.env
