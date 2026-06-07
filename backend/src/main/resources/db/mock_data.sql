@@ -2,27 +2,27 @@ USE music_recommend;
 
 -- 1. Users (password: 123456)
 INSERT INTO users (username, password, nickname, email) VALUES
-('admin','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','Admin','admin@test.com'),
-('user01','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','MusicFan01','u01@test.com'),
-('user02','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','MusicFan02','u02@test.com'),
-('user03','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','MusicFan03','u03@test.com'),
-('user04','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','MusicFan04','u04@test.com'),
-('user05','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','MusicFan05','u05@test.com'),
-('user06','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','RockFan','u06@test.com'),
-('user07','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','FolkLover','u07@test.com'),
-('user08','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','HipHopFan','u08@test.com'),
-('user09','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','ClassicFan','u09@test.com'),
-('user10','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','PopLover','u10@test.com'),
-('user11','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','ElectroFan','u11@test.com'),
-('user12','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','JazzFan','u12@test.com'),
-('user13','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','RnBFan','u13@test.com'),
-('user14','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','CampusFolk','u14@test.com'),
-('user15','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','MetalHead','u15@test.com'),
-('user16','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','IndieFan','u16@test.com'),
-('user17','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','CantoneseFan','u17@test.com'),
-('user18','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','WesternPop','u18@test.com'),
-('user19','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','AncientStyle','u19@test.com'),
-('user20','$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi','TestUser','test@test.com');
+('admin','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','Admin','admin@test.com'),
+('user01','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','MusicFan01','u01@test.com'),
+('user02','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','MusicFan02','u02@test.com'),
+('user03','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','MusicFan03','u03@test.com'),
+('user04','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','MusicFan04','u04@test.com'),
+('user05','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','MusicFan05','u05@test.com'),
+('user06','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','RockFan','u06@test.com'),
+('user07','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','FolkLover','u07@test.com'),
+('user08','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','HipHopFan','u08@test.com'),
+('user09','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','ClassicFan','u09@test.com'),
+('user10','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','PopLover','u10@test.com'),
+('user11','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','ElectroFan','u11@test.com'),
+('user12','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','JazzFan','u12@test.com'),
+('user13','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','RnBFan','u13@test.com'),
+('user14','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','CampusFolk','u14@test.com'),
+('user15','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','MetalHead','u15@test.com'),
+('user16','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','IndieFan','u16@test.com'),
+('user17','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','CantoneseFan','u17@test.com'),
+('user18','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','WesternPop','u18@test.com'),
+('user19','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','AncientStyle','u19@test.com'),
+('user20','$2b$10$k8/6GsMDR/Ki0iMUvS8mIevLQGymEqfWr9xokm8lUPuOQ1yAl8X9y','TestUser','test@test.com');
 
 -- 2. Artists (50)
 INSERT INTO artists (name, description) VALUES
