@@ -1,24 +1,28 @@
 package com.musicrec.service;
 
 import com.musicrec.common.Result;
-import com.musicrec.mapper.RecommendationMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
 import java.util.Map;
 
 @Service
 public class RecommendationService {
-    private final RecommendationMapper recMapper;
+
+    private final DeepSeekService deepSeekService;
     private final HttpServletRequest request;
 
-    public RecommendationService(RecommendationMapper recMapper, HttpServletRequest request) {
-        this.recMapper = recMapper;
+    public RecommendationService(DeepSeekService deepSeekService, HttpServletRequest request) {
+        this.deepSeekService = deepSeekService;
         this.request = request;
     }
 
-    public Result<List<Map<String, Object>>> getRecommendations(int limit) {
+    /**
+     * 获取个性化推荐 — 基于 DeepSeek 大模型
+     */
+    public Result<Map<String, Object>> getRecommendations() {
         Long userId = (Long) request.getAttribute("userId");
-        return Result.success(recMapper.selectRecsWithSong(userId, limit));
+        Map<String, Object> result = deepSeekService.generateRecommend(userId);
+        return Result.success(result);
     }
 }
