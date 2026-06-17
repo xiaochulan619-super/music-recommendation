@@ -20,6 +20,7 @@ public interface SongMapper extends BaseMapper<Song> {
             "WHERE #{keyword} = '' " +
             "   OR s.title LIKE CONCAT('%', #{keyword}, '%') " +
             "   OR a.name LIKE CONCAT('%', #{keyword}, '%') " +
+            "   OR a.original_name LIKE CONCAT('%', #{keyword}, '%') " +
             "   OR s.id IN (SELECT st.song_id FROM song_tags st JOIN tags t ON st.tag_id = t.id WHERE t.name LIKE CONCAT('%', #{keyword}, '%')) " +
             "ORDER BY s.id DESC")
     IPage<Song> selectPageWithArtist(Page<Song> page, String keyword);

@@ -26,7 +26,9 @@ public class ArtistService {
     public Result<PageResult<Artist>> listArtists(String keyword, int page, int size) {
         Page<Artist> p = new Page<>(page, size);
         LambdaQueryWrapper<Artist> qw = new LambdaQueryWrapper<>();
-        if (keyword != null && !keyword.isEmpty()) qw.like(Artist::getName, keyword);
+        if (keyword != null && !keyword.isEmpty()) {
+            qw.and(w -> w.like(Artist::getName, keyword).or().like(Artist::getOriginalName, keyword));
+        }
         Page<Artist> result = artistMapper.selectPage(p, qw);
         return Result.success(PageResult.of(result.getTotal(), page, size, result.getRecords()));
     }
