@@ -20,6 +20,14 @@ jwt:
   secret: music-recommendation-system-jwt-secret-key-2026
   expiration: 86400000
 
+deepseek:
+  api-key: ${DEEPSEEK_API_KEY:sk-0a3ec1dd729d4b2a835985226cd1d7ab}
+  base-url: https://api.deepseek.com
+  model: deepseek-chat
+  timeout: 15000
+  max-recommendations: 12
+  cache-ttl-minutes: 5
+
 logging:
   level:
     com.musicrec: debug
