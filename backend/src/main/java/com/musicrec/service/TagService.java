@@ -17,11 +17,14 @@ public class TagService {
     private final TagMapper tagMapper;
     private final SongTagMapper songTagMapper;
     private final SongMapper songMapper;
+    private final SongService songService;
 
-    public TagService(TagMapper tagMapper, SongTagMapper songTagMapper, SongMapper songMapper) {
+    public TagService(TagMapper tagMapper, SongTagMapper songTagMapper, SongMapper songMapper,
+                      SongService songService) {
         this.tagMapper = tagMapper;
         this.songTagMapper = songTagMapper;
         this.songMapper = songMapper;
+        this.songService = songService;
     }
 
     public Result<List<Tag>> listTags(String type) {
@@ -39,6 +42,7 @@ public class TagService {
                 .map(SongTag::getSongId).collect(Collectors.toList());
         List<Song> songs = songIds.isEmpty() ? List.of() :
                 songMapper.selectBatchIds(songIds);
+        songService.enrichWithArtists(songs);
         return Result.success(PageResult.of(result.getTotal(), page, size, songs));
     }
 }

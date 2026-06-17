@@ -17,12 +17,14 @@ import java.util.stream.Collectors;
 public class FavoriteService {
     private final FavoriteMapper favoriteMapper;
     private final SongMapper songMapper;
+    private final SongService songService;
     private final HttpServletRequest request;
 
     public FavoriteService(FavoriteMapper favoriteMapper, SongMapper songMapper,
-                           HttpServletRequest request) {
+                           SongService songService, HttpServletRequest request) {
         this.favoriteMapper = favoriteMapper;
         this.songMapper = songMapper;
+        this.songService = songService;
         this.request = request;
     }
 
@@ -62,6 +64,7 @@ public class FavoriteService {
                 .map(Favorite::getSongId).collect(Collectors.toList());
         List<Song> songs = songIds.isEmpty() ? List.of() :
                 songMapper.selectBatchIds(songIds);
+        songService.enrichWithArtists(songs);
         return Result.success(PageResult.of(result.getTotal(), page, size, songs));
     }
 }

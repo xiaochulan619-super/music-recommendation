@@ -11,4 +11,6 @@ public class Artist {
     private String name;
     private String description;
     private String imageUrl;
+    private String nationality;
+    private String originalName;
 }

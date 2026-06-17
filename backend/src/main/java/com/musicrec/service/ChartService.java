@@ -15,10 +15,12 @@ import java.util.stream.Collectors;
 public class ChartService {
     private final ChartMapper chartMapper;
     private final SongMapper songMapper;
+    private final SongService songService;
 
-    public ChartService(ChartMapper chartMapper, SongMapper songMapper) {
+    public ChartService(ChartMapper chartMapper, SongMapper songMapper, SongService songService) {
         this.chartMapper = chartMapper;
         this.songMapper = songMapper;
+        this.songService = songService;
     }
 
     public Result<List<Map<String, Object>>> getCharts(String type, int limit) {
@@ -31,7 +33,9 @@ public class ChartService {
         Map<Long, Song> songMap = songIds.isEmpty() ? Map.of() :
                 songMapper.selectBatchIds(songIds).stream()
                         .collect(Collectors.toMap(Song::getId, s -> s));
+        songService.enrichWithArtists(new ArrayList<>(songMap.values()));
 
+        // 构建结果列表
         List<Map<String, Object>> list = new ArrayList<>();
         for (int i = 0; i < charts.size(); i++) {
             Chart c = charts.get(i);
@@ -43,6 +47,17 @@ public class ChartService {
             item.put("hotScore", c.getHotScore());
             list.add(item);
         }
+
+        // 专辑 + 歌手联合打散
+        list = SongDiversityUtil.greedyDiverse(list, list.size(),
+                item -> { Song s = (Song) item.get("song"); return s != null ? s.getAlbum() : null; },
+                item -> { Song s = (Song) item.get("song"); return s != null ? s.getArtistName() : null; });
+
+        // 重新排名
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i).put("rank", i + 1);
+        }
+
         return Result.success(list);
     }
 }

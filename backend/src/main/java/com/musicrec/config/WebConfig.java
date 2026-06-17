@@ -34,7 +34,8 @@ public class WebConfig implements WebMvcConfigurer {
                     "/api/songs/**",
                     "/api/artists/**",
                     "/api/tags/**",
-                    "/api/charts/**"
+                    "/api/charts/**",
+                    "/api/covers/**"
                 );
     }
 }

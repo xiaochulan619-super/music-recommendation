@@ -1,0 +1,35 @@
+-- 为现有歌手补充国籍和原始名信息
+USE music_recommend;
+
+UPDATE artists SET nationality = '中国', original_name = '周杰伦' WHERE name = 'Jay Chou';
+UPDATE artists SET nationality = '新加坡', original_name = '林俊杰' WHERE name = 'JJ Lin';
+UPDATE artists SET nationality = '中国', original_name = '陈奕迅' WHERE name = 'Eason Chan';
+UPDATE artists SET nationality = '中国', original_name = '邓紫棋' WHERE name = 'G.E.M.';
+UPDATE artists SET nationality = '中国', original_name = '薛之谦' WHERE name = 'Joker Xue';
+UPDATE artists SET nationality = '中国', original_name = '李荣浩' WHERE name = 'Li Ronghao';
+UPDATE artists SET nationality = '中国', original_name = '田馥甄' WHERE name = 'Hebe Tien';
+UPDATE artists SET nationality = '中国', original_name = '五月天' WHERE name = 'Mayday';
+UPDATE artists SET nationality = '英国', original_name = 'Coldplay' WHERE name = 'Coldplay';
+UPDATE artists SET nationality = '美国', original_name = 'Taylor Swift' WHERE name = 'Taylor Swift';
+UPDATE artists SET nationality = '英国', original_name = 'Ed Sheeran' WHERE name = 'Ed Sheeran';
+UPDATE artists SET nationality = '英国', original_name = 'Adele' WHERE name = 'Adele';
+UPDATE artists SET nationality = '美国', original_name = 'Bruno Mars' WHERE name = 'Bruno Mars';
+UPDATE artists SET nationality = '美国', original_name = 'Beyoncé' WHERE name = 'Beyonce';
+UPDATE artists SET nationality = '加拿大', original_name = 'Justin Bieber' WHERE name = 'Justin Bieber';
+UPDATE artists SET nationality = '加拿大', original_name = 'Drake' WHERE name = 'Drake';
+UPDATE artists SET nationality = '美国', original_name = 'Eminem' WHERE name = 'Eminem';
+UPDATE artists SET nationality = '美国', original_name = 'Kendrick Lamar' WHERE name = 'Kendrick Lamar';
+UPDATE artists SET nationality = '美国', original_name = 'Billie Eilish' WHERE name = 'Billie Eilish';
+UPDATE artists SET nationality = '英国', original_name = 'Dua Lipa' WHERE name = 'Dua Lipa';
+UPDATE artists SET nationality = '中国', original_name = '王菲' WHERE name = 'Faye Wong';
+UPDATE artists SET nationality = '中国', original_name = '张学友' WHERE name = 'Jacky Cheung';
+UPDATE artists SET nationality = '中国', original_name = '刘德华' WHERE name = 'Andy Lau';
+UPDATE artists SET nationality = '中国', original_name = '张惠妹' WHERE name = 'A-Mei Chang';
+UPDATE artists SET nationality = '中国', original_name = '蔡依林' WHERE name = 'Jolin Tsai';
+UPDATE artists SET nationality = '中国', original_name = '朴树' WHERE name = 'Pu Shu';
+UPDATE artists SET nationality = '中国', original_name = '许巍' WHERE name = 'Xu Wei';
+UPDATE artists SET nationality = '中国', original_name = '赵雷' WHERE name = 'Zhao Lei';
+UPDATE artists SET nationality = '中国', original_name = '毛不易' WHERE name = 'Mao Buyi';
+UPDATE artists SET nationality = '中国', original_name = '华晨宇' WHERE name = 'Hua Chenyu';
+UPDATE artists SET nationality = '中国', original_name = '张杰' WHERE name = 'Jason Zhang';
+UPDATE artists SET nationality = '新加坡', original_name = '孙燕姿' WHERE name = 'Stefanie Sun';

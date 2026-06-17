@@ -20,4 +20,10 @@ public class Song {
 
     @TableField(exist = false)
     private String artistName;
+
+    @TableField(exist = false)
+    private String nationality;
+
+    @TableField(exist = false)
+    private String artistOriginalName;
 }

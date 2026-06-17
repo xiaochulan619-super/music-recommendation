@@ -15,10 +15,12 @@ import java.util.*;
 public class ArtistService {
     private final ArtistMapper artistMapper;
     private final SongMapper songMapper;
+    private final SongService songService;
 
-    public ArtistService(ArtistMapper artistMapper, SongMapper songMapper) {
+    public ArtistService(ArtistMapper artistMapper, SongMapper songMapper, SongService songService) {
         this.artistMapper = artistMapper;
         this.songMapper = songMapper;
+        this.songService = songService;
     }
 
     public Result<PageResult<Artist>> listArtists(String keyword, int page, int size) {
@@ -35,6 +37,7 @@ public class ArtistService {
         LambdaQueryWrapper<Song> qw = new LambdaQueryWrapper<>();
         qw.eq(Song::getArtistId, id);
         List<Song> songs = songMapper.selectList(qw);
+        songService.enrichWithArtists(songs);
         Map<String, Object> data = new HashMap<>();
         data.put("artist", artist);
         data.put("songs", songs);

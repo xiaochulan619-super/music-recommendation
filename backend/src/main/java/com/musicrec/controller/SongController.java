@@ -6,6 +6,8 @@ import com.musicrec.entity.Song;
 import com.musicrec.service.SongService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/songs")
 public class SongController {
@@ -23,5 +25,13 @@ public class SongController {
     @GetMapping("/{id}")
     public Result<Song> detail(@PathVariable Long id) {
         return songService.getSongDetail(id);
+    }
+
+    /**
+     * 推荐流：中文歌加权 + 专辑打散，首页"为你推荐"使用
+     */
+    @GetMapping("/recommend")
+    public Result<List<Song>> recommend(@RequestParam(defaultValue = "15") int limit) {
+        return songService.listRecommendSongs(limit);
     }
 }
